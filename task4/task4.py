@@ -1,10 +1,11 @@
-import psutil
-import memory
-import network
-from datetime import datetime
 import configparser
-import time
 import re
+import time
+from datetime import datetime
+
+import psutil
+
+from task4 import memory, network
 
 while True:
     print("=========================================================================================================", '\n\n' )

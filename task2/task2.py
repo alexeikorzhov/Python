@@ -1,27 +1,20 @@
 print('============================Task 1====================================================================')
-a = ['r', 'w', 't', 'g', 'c', 'b']
-b = [23, 454, 34, 36]
-for i in range(len(a)):
-    print(a[i])
 
-a = ["Question", "Answer", "Blue", "Red", "Green"]
+a = ["Question", "Answer", "Blue", "Red", "Green", "White"]
 b = ["Vopros", "Otvet", "Sinii", "Krasni"]
-for index, znach in enumerate(b):
-    word = a[index]
-    print("{}-{}".format(word, znach))
 
-a = ["Question", "Answer", "Blue", "Red", "Green"]
-b = ["Vopros", "Otvet", "Sinii", "Krasni"]
-for index in range(len(b)):
-    word = a[index]
-    print("{}-{}".format(word, b[index]))
+for index in range(len(a)):
+        word = a[index]
+        if index < len(b):
+            print("{}-{}".format(word, b[index]))
+        else:
+            print("{}-{}".format(word, None))
 
 
 print('============================Task 2====================================================================')
 
 str1 = input("Please enter the word: ")
 str2 = ''
-#input("Please enter the word: ")
 for i in reversed(str1):
     str2 += i
 #    print(str2)
@@ -48,3 +41,12 @@ print(d)
 
 print('============================Task 4====================================================================')
 
+import re
+from collections import Counter
+
+with open('access.log') as log:
+    list = re.findall('[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}',
+    log.read())
+    log.close()
+    for ip in Counter(list).most_common(10):
+        print(ip[0])
