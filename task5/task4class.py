@@ -1,8 +1,8 @@
+import psutil
 import configparser
 import re
 import time
 from datetime import datetime
-import psutil
 
 
 while True:
